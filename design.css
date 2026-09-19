@@ -102,25 +102,33 @@ h2::after {
 }
 
 /* ===== Menu Cards ===== */
-h3 {
+.card {
   max-width: 640px;
-  margin: 2rem auto 0.25rem;
-  padding: 1.5rem 1.75rem 0;
-  font-size: 1.2rem;
-  color: var(--accent);
+  margin: 0 auto 1.5rem;
+  padding: 1.5rem 1.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  transition: background 0.2s;
 }
 
-h3 + p {
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 0 1.75rem;
+.card h3 {
+  margin: 0 0 0.25rem;
+  padding: 0;
+  font-size: 1.2rem;
+  color: var(--accent);
+  border: none;
+}
+
+.card p {
+  margin: 0;
+  padding: 0;
   color: var(--text-muted);
 }
 
-h3 + p + p {
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 0.5rem 1.75rem 1.5rem;
+.card p + p {
+  margin-top: 0.5rem;
 }
 
 /* price styling */
@@ -130,38 +138,10 @@ strong {
   font-variant-numeric: tabular-nums;
 }
 
-/* card container effect */
-h3, h3 + p, h3 + p + p {
-  background: var(--bg-card);
-  border-left: 3px solid var(--accent);
-}
-
-h3 {
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--accent);
-  border-bottom: none;
-  border-radius: 8px 8px 0 0;
-}
-
-h3 + p {
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--accent);
-  border-top: none;
-  border-bottom: none;
-}
-
-h3 + p + p {
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--accent);
-  border-top: none;
-  border-radius: 0 0 8px 8px;
-  margin-bottom: 1rem;
-}
 
 /* hover glow */
-h3:hover, h3:hover ~ p {
+.card:hover {
   background: var(--accent-dim);
-  transition: background 0.2s;
 }
 
 /* ===== Footer ===== */
@@ -186,5 +166,5 @@ footer p {
 /* ===== Responsive ===== */
 @media (max-width: 480px) {
   h1 { font-size: 2rem; }
-  h3, h3 + p, h3 + p + p { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .card { padding-left: 1.25rem; padding-right: 1.25rem; }
 }
