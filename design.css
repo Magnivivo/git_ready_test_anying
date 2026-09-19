@@ -1,0 +1,170 @@
+/* ===== Base & Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Blues — background scale */
+  --bg: var(--blue-900);
+  --bg-card: var(--blue-800);
+  --bg-nav: var(--blue-700);
+
+  /* Greens — primary accent */
+  --accent: #8CD79A;
+  --accent-bright: #CAF8CA;
+  --accent-dim: rgba(140, 215, 154, 0.1);
+
+  /* Support colors */
+  --yellow: #F5BF3F;
+  --red: #F08372;
+
+  --text: #D2E8FA;
+  --text-muted: #A8CFF5;
+  --border: var(--blue-600);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ===== Header ===== */
+h1 {
+  font-size: 2.8rem;
+  text-align: center;
+  padding: 3rem 1rem 0.5rem;
+  color: var(--accent-bright);
+  text-shadow: 0 0 20px rgba(140, 215, 154, 0.35);
+  letter-spacing: 2px;
+}
+
+body > p:first-of-type {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+/* ===== Nav ===== */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  background: var(--bg-nav);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+}
+
+nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+
+nav a:hover {
+  color: var(--accent-bright);
+  text-shadow: 0 0 10px rgba(140, 215, 154, 0.5);
+}
+
+/* ===== Section Title ===== */
+h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin: 3rem 0 1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--text);
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--yellow);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+/* ===== Menu Cards ===== */
+.card {
+  max-width: 640px;
+  margin: 0 auto 1.5rem;
+  padding: 1.5rem 1.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.card h3 {
+  margin: 0 0 0.25rem;
+  padding: 0;
+  font-size: 1.2rem;
+  color: var(--accent);
+  border: none;
+}
+
+.card p {
+  margin: 0;
+  padding: 0;
+  color: var(--text-muted);
+}
+
+.card p + p {
+  margin-top: 0.5rem;
+}
+
+/* price styling */
+strong {
+  color: var(--yellow);
+  font-size: 1.2rem;
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* hover glow */
+.card:hover {
+  background: var(--accent-dim);
+}
+
+/* ===== Footer ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  max-width: 640px;
+  margin: 2rem auto;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem 3rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+footer p {
+  opacity: 0.7;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+  h1 { font-size: 2rem; }
+  .card { padding-left: 1.25rem; padding-right: 1.25rem; }
+}
